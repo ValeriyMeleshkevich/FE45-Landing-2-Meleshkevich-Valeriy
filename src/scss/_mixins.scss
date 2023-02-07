@@ -105,7 +105,7 @@
     background-color: $btn_active;
 }
 
-//Section Advantage
+//Section Feauters
 @mixin sub-title {
     font-family: 'Raleway';
     font-style: normal;
@@ -127,10 +127,9 @@
     color: $light_grey;
 }
 
-//Section Portfolio
+//Section Works
 @mixin mask-title {
     display: block;
-    // width: 50%;
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 900;
@@ -192,7 +191,7 @@
     font-size: 10px;
 }
 
-//Section Sli (Slider)
+//Section swiper slider
 @mixin slider-text {
     font-family: 'Cardo';
     font-style: italic;
