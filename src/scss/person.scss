@@ -1,0 +1,163 @@
+.person-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 114px 0 114px;
+    margin: 0 -15px;
+
+    @media (max-width: 920px) {
+        justify-content: center;
+    }
+
+
+    @media (max-width: 320px) {
+        padding: 35px 0 35px;
+    }
+}
+
+.person-wrap--info {
+    width: 247px;
+    margin: 0 15px;
+
+    @media (max-width: 1110px) {
+        width: 224px;
+    }
+
+    @media (max-width: 1020px) {
+        width: 200px;
+    }
+
+    @media (max-width: 920px) {
+        width: 320px;
+        justify-content: center;
+        margin-bottom: 50px;
+
+        &:nth-child(3),
+        &:nth-child(4) {
+            margin-bottom: 0;
+        }
+    }
+
+    @media (max-width: 700px) {
+        &:nth-child(3) {
+            margin-bottom: 50px;
+        }
+    }
+
+    @media (max-width: 320px) {
+        width: 280px;
+    }
+
+    span {
+        @include person-st;
+
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        @media (max-width: 320px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+
+    p {
+        @include person-text;
+        margin-bottom: 38px;
+
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        @media (max-width: 920px) {
+            font-size: 18px;
+            line-height: 19px;
+        }
+
+        @media (max-width: 1024px) {
+            // font-size: 16px;
+            // line-height: 14px;
+        }
+
+        @media (max-width: 620px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+}
+
+.person-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    @media (max-width: 1024px) {}
+
+    @media (max-width: 320px) {}
+}
+
+.person-title {
+    @include person-title;
+
+    @media (max-width: 1024px) {
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    @media (max-width: 320px) {
+        font-size: 18px;
+        line-height: 21px;
+    }
+}
+
+.person-links {
+    width: 129px;
+    display: block;
+    display: flex;
+    justify-content: space-between;
+}
+
+.person-links__item {
+    width: 39px;
+    height: 39px;
+    border: 1px solid #C6CBCD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        @include links;
+    }
+}
+
+
+.fa-facebook {
+    &:hover {
+        color: blue;
+        transform: scale(1.3);
+        transition: 0.3s;
+        border-color: blue;
+    }
+}
+
+
+.fa-twitter {
+    &:hover {
+        color: aqua;
+        transform: scale(1.3);
+        transition: 0.3s;
+        border-color: blue;
+    }
+}
+
+.fa-linkedin {
+    &:hover {
+        color: darkblue;
+        transform: scale(1.3);
+        transition: 0.3s;
+        border-color: blue;
+    }
+}

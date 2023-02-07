@@ -1,0 +1,265 @@
+.header {
+    position: relative;
+    z-index: 1;
+    background-image: url("../img/img.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 40px 0 0;
+    height: 100vh;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-color: $bg_color;
+
+    }
+}
+
+.navigation {
+    display: block;
+    position: relative;
+    top: 0;
+    z-index: 1;
+
+    &::after {
+        content: "";
+        display: block;
+        position: relative;
+        width: 100%;
+        margin: 42px 0 130px;
+        border: 1px solid #BABBC5;
+    }
+
+    @media (max-width: 800px) {
+        &::after {
+            display: none;
+        }
+    }
+}
+
+
+.navigation-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 800px) {
+        margin-bottom: 150px;
+    }
+}
+
+.navigation-logo {}
+
+.navigation-burger {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    width: 570px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.navigation-logo--firstelement {
+    font-family: Raleway;
+    font-size: 26px;
+    color: $deep_grey;
+    font-weight: bold;
+}
+
+.navigation-logo--secondelement {
+    font-family: lato;
+    font-size: 26px;
+    color: $white;
+    margin-left: -3px;
+}
+
+// .navigation-list--item:not(:last-child) {
+//     margin: 0 15px;
+// }
+
+// .navigation-list--item:nth-last-child(1) {
+//     margin: 0;
+// }
+
+.menu-item a {
+    position: relative;
+    @include h6;
+    color: $white;
+
+    &:hover {
+        color: $deep_coral;
+    }
+
+    &:hover::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        top: 64px;
+        background-color: $grey;
+    }
+
+    @media (max-width: 800px) {
+        &:hover::after {
+            display: none;
+        }
+    }
+}
+
+.main {}
+
+.main-title {
+    @include h1;
+    margin-bottom: 32px;
+
+    @media (max-width:1024px) {
+        font-size: 48px;
+        line-height: 56px;
+        margin-bottom: 61px;
+    }
+
+    @media (max-width:560px) {
+        font-size: 36px;
+        line-height: 42px;
+    }
+}
+
+.main-text {
+    @include main-text;
+    margin-bottom: 82px;
+
+    @media (max-width:1024px) {
+        font-size: 18px;
+        line-height: 21px;
+        margin-bottom: 91px;
+    }
+
+    @media (max-width:560px) {
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 51px;
+    }
+}
+
+.main-button {
+    @include btn;
+
+    @media (max-width:1024px) {
+        width: 313px;
+    }
+
+    @media (max-width:560px) {
+        width: 95%;
+    }
+
+    &:hover {
+        @include btn_hover;
+    }
+
+    &:active {
+        @include btn_active;
+    }
+}
+
+// Мой первый бургер
+
+@media (max-width: 800px) {
+    .navigation-wrap .menu {
+        display: none;
+    }
+
+    .hamb {
+        display: flex;
+        align-items: center;
+    }
+
+    .hamb__field {
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        margin: 6px auto;
+        background-color: #fff;
+        transition: 0.2s;
+    }
+
+    .popup {
+        position: fixed;
+        top: 75px;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        display: flex;
+        transition: 0.3s;
+        background-image: url("../img/desk-2325627_960_720.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+
+    .popup.open {
+        left: 0;
+    }
+
+    .popup .menu {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 0;
+        overflow: auto;
+        margin-top: 20px;
+    }
+
+    .popup .menu li {
+        width: 100%;
+
+        a {
+            width: 100%;
+            display: flex;
+            padding: 30 15;
+            font-size: 20px;
+            font-weight: bold;
+            color: $bg_color;
+
+            &:hover {
+                background-color: rgba(122, 82, 179, 0.1);
+            }
+        }
+    }
+
+
+    .hamb-field.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamb-field.active .bar:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .hamb-field.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    body.noscroll {
+        overflow: hidden;
+    }
+}

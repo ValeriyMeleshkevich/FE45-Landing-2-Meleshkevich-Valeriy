@@ -1,0 +1,31 @@
+.footer {
+    background-color: $footer_bg;
+}
+
+.footer-text {
+    padding: 24 0 24;
+    width: 370px;
+    display: flex;
+    margin: auto;
+    text-align: center;
+    @include footer-text;
+
+    @media (max-width: 1024px) {
+        font-size: 14px;
+        line-height: 16px;
+        width: 314px;
+    }
+
+    @media (max-width: 410px) {
+        width: 280px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    p {}
+
+    span {
+        padding-left: 5px;
+        color: $white;
+    }
+}

@@ -1,0 +1,79 @@
+.works-card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.works-card--img {
+    position: relative;
+    width: 25%;
+    z-index: 2;
+
+
+    @media (max-width: 699px) {
+        width: 50%;
+    }
+
+    @media (max-width: 420px) {
+        width: 100%;
+
+        &:nth-child(odd) {
+            display: none;
+        }
+    }
+
+    &:hover::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $card_mask;
+    }
+
+    &:active::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $card_mask_active;
+    }
+}
+
+.works-card--img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+}
+
+.mask {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity .2s;
+    z-index: 2;
+}
+
+.mask-title {
+    @include mask-title;
+    margin-bottom: 50px;
+}
+
+.mask-info {
+    @include mask-p;
+}
+
+.works-card--img:hover .mask {
+    visibility: visible;
+    opacity: 1;
+}

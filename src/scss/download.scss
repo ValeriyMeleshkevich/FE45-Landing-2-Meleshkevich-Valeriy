@@ -1,0 +1,64 @@
+.Download {}
+
+.container {}
+
+.download-info {
+    padding: 114 0 114;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.download-description {}
+
+.download-description--title {
+    @include ddt;
+    margin-bottom: 30px;
+
+    @media (max-width: 1024px) {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    @media (max-width: 320px) {
+        font-size: 18px;
+        line-height: 21px;
+    }
+}
+
+.download-description--subtitle {
+    display: block;
+    @include dds;
+    margin-bottom: 50px;
+
+    @media (max-width: 1024px) {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    @media (max-width: 320px) {
+        font-size: 13px;
+        line-height: 15px;
+    }
+}
+
+.download-btn {
+    @include btn;
+
+    @media (max-width: 1024px) {
+        width: 313px;
+    }
+
+    @media (max-width: 560px) {
+        width: 95%;
+        margin-bottom: 45px;
+    }
+
+    &:hover {
+        @include btn_hover;
+    }
+
+    &:active {
+        @include btn_active;
+    }
+}

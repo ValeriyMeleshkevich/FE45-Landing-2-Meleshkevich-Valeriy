@@ -1,0 +1,89 @@
+.contact {
+    background: $light_purple;
+    padding: 71 170 67;
+
+    @media (max-width: 1024px) {
+        padding: 46 20 41;
+    }
+
+    @media (max-width: 320px) {}
+}
+
+.contact-wrap {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 0 -15px;
+
+    @media (max-width: 1024px) {}
+
+    @media (max-width: 570px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.contact-card {
+    width: 370px;
+    margin: 0 15px;
+
+    @media (max-width: 1024px) {
+        width: 315px;
+    }
+
+    @media (max-width: 570px) {
+        width: 275px;
+
+        &:not(:last-child) {
+            margin-bottom: 69px;
+        }
+    }
+
+    p {
+        @include contact-p;
+
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        @media (max-width: 570px) {
+            width: 275px;
+        }
+    }
+}
+
+.contact-card--title {
+    @include contact-title;
+    margin-bottom: 29px;
+
+    @media (max-width: 1024px) {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    @media (max-width: 570px) {
+        margin-bottom: 35px;
+    }
+}
+
+.contact-card--links {
+    margin: auto;
+    width: 171px;
+    display: block;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-links-link {
+    width: 39px;
+    height: 39px;
+    border: 1px solid #C6CBCD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        @include links;
+    }
+}
