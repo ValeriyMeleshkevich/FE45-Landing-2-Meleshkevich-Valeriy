@@ -1,3 +1,5 @@
+//Slider
+
 //Инициализация Swiper
 const swiper = new Swiper('.swiper', {
 
@@ -14,19 +16,25 @@ const swiper = new Swiper('.swiper', {
     clickable: true,
   },
 
-  simulateTouch: true,
-  touchRatio: 2,
+  mousewheel: true,
+  keyboard: true,
+
+  // simulateTouch: true,
+  touchRatio: 1,
   touchAngle: 45,
   grabCursor: true,
 });
 
 
+
+
+//Hamburger
+
+//Инициализация бургера
 const hamb = document.querySelector("#hamb");
 const popup = document.querySelector("#popup");
 const body = document.body;
 
-// Клонируем меню, чтобы задать свои стили для мобильной версии
-const menu = document.querySelector("#menu").cloneNode(1);
 
 // При клике на иконку hamb вызываем ф-ию hambHandler
 hamb.addEventListener("click", hambHandler);
